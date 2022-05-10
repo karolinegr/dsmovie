@@ -7,7 +7,7 @@ export const Navbar: any = () => {
       <nav className="container">
         <div className="dsmovie-nav-content">
           <h1>DSMovie</h1>
-          <a
+          <a className="dsmovie-contact"
             href="https://github.com/karolinegr"
             target="_blank"
             rel="noreferrer"
