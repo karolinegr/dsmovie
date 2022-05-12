@@ -1,5 +1,6 @@
 import "./styles.css";
 import { MovieScore } from "../MovieScore";
+import { Link } from "react-router-dom";
 
 export const Moviecard: any = () => {
   const movie = {
@@ -10,7 +11,7 @@ export const Moviecard: any = () => {
     count: 2,
     score: 4.5,
   };
-  
+
   return (
     <>
       <div>
@@ -22,7 +23,9 @@ export const Moviecard: any = () => {
         <div className="dsmovie-card-bottom-container">
           <h3>{movie.title}</h3>
           <MovieScore />
-          <div className="btn btn-primary dsmovie-btn">Avaliar</div>
+          <Link to={`/form/${movie.id}`}>
+            <div className="btn btn-primary dsmovie-btn">Avaliar</div>
+          </Link>
         </div>
       </div>
     </>
