@@ -8,6 +8,7 @@ import { MoviePage } from "../../types/movie";
 
 export const List = () => {
   const [pageNumber, setPageNumber] = useState(0);
+
   const [page, setPage] = useState<MoviePage>({
     content: [],
     last: true,
@@ -29,9 +30,13 @@ export const List = () => {
       });
   }, [pageNumber]);
 
+  const handlePageChange = (newPageNumber : number) => {
+    setPageNumber(newPageNumber)
+  }
+
   return (
     <>
-      <Pagination />
+      <Pagination page={page} onChange={handlePageChange} />
       <Container>
         <Row>
           {page.content.map((movie) => (
